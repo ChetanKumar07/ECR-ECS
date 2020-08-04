@@ -12,7 +12,7 @@ pipeline {
       stage('GetSCM') {
          steps {
             // Get some code from a GitHub repository
-            git https://github.com/ChetanKumar07/Docker-ECR.git'
+            git 'https://github.com/ChetanKumar07/Docker-ECR.git'
          }
          }
          stage('Image Build'){
