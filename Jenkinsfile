@@ -5,7 +5,7 @@ pipeline {
         VERSION = "${BUILD_NUMBER}"
         PROJECT = 'nodeapp'
         IMAGE = "$PROJECT:$VERSION"
-        ECRURL = 'https://040200806866.dkr.ecr.ap-south-1.amazonaws.com'
+        ECRURL = 'https://531359658382.dkr.ecr.ap-south-1.amazonaws.com/node_app'
         ECRCRED = 'ecr:ap-south-1:uploadtos3'
     }   
     stages {
@@ -15,6 +15,10 @@ pipeline {
             git 'https://github.com/ChetanKumar07/Docker-ECR.git'
          }
          }
+       stage('Create Repo'){
+          steps{
+             aws ecr create-repository --repository-name node_app1 --region ap-south-1}
+       }
          stage('Image Build'){
              steps{
                  script{
