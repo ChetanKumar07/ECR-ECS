@@ -15,10 +15,6 @@ pipeline {
             git 'https://github.com/ChetanKumar07/Docker-ECR.git'
          }
          }
-       stage('Create Repo'){
-          steps{
-             aws ecr create-repository --repository-name node_app1 --region ap-south-1}
-       }
          stage('Image Build'){
              steps{
                  script{
