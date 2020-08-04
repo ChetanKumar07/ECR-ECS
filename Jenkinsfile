@@ -6,7 +6,7 @@ pipeline {
         PROJECT = 'nodeapp'
         IMAGE = "$PROJECT:$VERSION"
         ECRURL = 'https://040200806866.dkr.ecr.ap-south-1.amazonaws.com'
-        ECRCRED = 'ecr:ap-south-1:awscredentials'
+        ECRCRED = 'ecr:ap-south-1:uploadtos3'
     }   
     stages {
       stage('GetSCM') {
