@@ -1,7 +1,5 @@
 FROM ubuntu
 
-MAINTAINER ybmsr <ybmadhu404@gmail.com>
-
 WORKDIR /usr/apps/hello-docker/
 
 RUN apt-get -y update
