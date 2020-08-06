@@ -2,6 +2,8 @@ FROM ubuntu
 
 WORKDIR /usr/apps/hello-docker/
 
+RUN sudo apt-get install -y yum
+
 RUN yum -y update
 
 RUN yum install -y nodejs
