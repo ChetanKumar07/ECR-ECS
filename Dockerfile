@@ -2,6 +2,8 @@ FROM ubuntu
 
 WORKDIR /usr/apps/hello-docker/
 
+RUN apt-get -y update
+
 RUN apt-get install -y yum
 
 RUN yum -y update
