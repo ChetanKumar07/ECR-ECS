@@ -4,13 +4,9 @@ WORKDIR /usr/apps/hello-docker/
 
 RUN apt-get -y update
 
-RUN apt-get install -y yum
+RUN apt-get install -y nodejs
 
-RUN yum -y update
-
-RUN yum install -y nodejs
-
-RUN yum install -y npm
+RUN apt-get install -y npm
 
 #RUN ln -s /usr/bin/nodejs /usr/bin/node
 
