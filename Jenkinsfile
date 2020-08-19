@@ -5,8 +5,8 @@ pipeline {
         VERSION = "${BUILD_NUMBER}"
         PROJECT = 'nodeapp'
         IMAGE = "$PROJECT:$VERSION"
-        ECRURL = 'https://531359658382.dkr.ecr.ap-south-1.amazonaws.com/nodeapp'
-        ECRCRED = 'ecr:ap-south-1:AWS_ECR'
+        ECRURL = 'https://531359658382.dkr.ecr.ap-south-1.amazonaws.com/node_app'
+        ECRCRED = 'ecr:ap-south-1:ECR_Creds'
     }   
     stages {
       stage('GetSCM') {
