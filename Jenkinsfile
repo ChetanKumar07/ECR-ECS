@@ -34,7 +34,7 @@ pipeline {
                 }
             }
          }
-       stage('Deploy to ECS') {
+       stages('Deploy to ECS') {
        agent {
             ecs {
                cloud 'Jenkins-ECS'
