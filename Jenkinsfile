@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent none
    environment 
     {
         VERSION = "${BUILD_NUMBER}"
