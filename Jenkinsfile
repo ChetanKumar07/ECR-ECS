@@ -34,7 +34,7 @@ pipeline {
                 }
             }
          }
-       stage('Test') {
+       stage('Deploy to ECS') {
        agent {
             ecs {
                cloud 'aws-claims'
