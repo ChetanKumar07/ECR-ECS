@@ -37,7 +37,7 @@ pipeline {
        stage('Deploy to ECS') {
        agent {
             ecs {
-               cloud 'aws-claims'
+               cloud 'Jenkins-ECS'
                launchType 'FARGATE'
                memory 2048
                cpu 1024
