@@ -39,8 +39,8 @@ pipeline {
             ecs {
                cloud 'Jenkins-ECS'
                launchType 'FARGATE'
-               memory 2048
-               cpu 1024
+               memory 1024
+               cpu 512
                assignPublicIp false
                image '531359658382.dkr.ecr.ap-south-1.amazonaws.com/node_app:28'
                label 'ECS-label'
