@@ -34,15 +34,18 @@ pipeline {
                 }
             }
          }
-    }
-  
-    post
-    {
-        always
-        {
-            // make sure that the Docker image is removed
-            sh "docker rmi $IMAGE | true"
-        }
-    }
-    
+       stage('Test') {
+       agent {
+            ecs {
+               cloud 'aws-claims'
+               launchType 'FARGATE'
+               memory 2048
+               cpu 1024
+               assignPublicIp false
+               inheritFrom 'docker'
+               label 'sbt'
+            }
+         }
+       }
+    }    
 }
