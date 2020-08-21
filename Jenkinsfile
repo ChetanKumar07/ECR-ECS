@@ -14,7 +14,7 @@ pipeline {
                label 'ECS-label'
                 }
             }
-		 Steps{
+		 steps{
 			 sh 'java -version'
       }
           }
