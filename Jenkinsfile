@@ -6,7 +6,7 @@ pipeline {
          agent {
             ecs {
                cloud 'Jenkins-ECS'
-               launchType 'FARGATE'
+               launchType 'EC2'
                memory 1024
                cpu 512
                assignPublicIp true
