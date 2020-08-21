@@ -35,6 +35,7 @@ pipeline {
             }
          }
          stage('Deploy to ECS') {
+		   steps {
          agent {
             ecs {
                cloud 'Jenkins-ECS'
@@ -46,6 +47,7 @@ pipeline {
                label 'ECS-label'
                 }
             }
-        }
+          }
+		}
     }    
 }
