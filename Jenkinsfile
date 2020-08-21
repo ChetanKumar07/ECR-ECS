@@ -34,8 +34,8 @@ pipeline {
                 }
             }
          }
-       stage('Deploy to ECS') {
-       agent {
+         stage('Deploy to ECS') {
+         agent {
             ecs {
                cloud 'Jenkins-ECS'
                launchType 'FARGATE'
@@ -44,8 +44,8 @@ pipeline {
                assignPublicIp false
                image '531359658382.dkr.ecr.ap-south-1.amazonaws.com/node_app:28'
                label 'ECS-label'
+                }
             }
-         }
-       }
+        }
     }    
 }
