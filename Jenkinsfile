@@ -6,12 +6,11 @@ pipeline {
          agent {
             ecs {
                cloud 'Jenkins-ECS'
+	       inheritFrom 'ECS-template'
                launchType 'FARGATE'
                memory 1024
                cpu 512
-               assignPublicIp true
                image '531359658382.dkr.ecr.ap-south-1.amazonaws.com/nodeapp:9'
-	       inheritFrom 'ECS-label'
                label 'ECS-label'
                 }
             }
