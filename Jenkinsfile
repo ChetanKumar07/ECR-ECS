@@ -5,8 +5,8 @@ pipeline {
          stage('Deploy to ECS') {
          agent {
             ecs {
-               cloud 'Jenkins-ECS'
-               launchType 'EC2'
+               //cloud 'Jenkins-ECS'
+               launchType 'FARGATE'
                memory 1024
                cpu 512
                assignPublicIp true
