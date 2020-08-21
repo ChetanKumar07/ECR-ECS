@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent none
    environment 
     {
         VERSION = "${BUILD_NUMBER}"
@@ -9,33 +9,8 @@ pipeline {
         ECRCRED = 'ecr:ap-south-1:ECR_Creds'
     }   
     stages {
-      stage('GetSCM') {
-         steps {
-            // Get some code from a GitHub repository
-            git 'https://github.com/ChetanKumar07/Docker-ECR.git'
-         }
-         }
-         stage('Image Build'){
-             steps{
-                 script{
-                       docker.build('$DOCKER_IMAGE')
-                 }
-             }
-         }
-         stage('Push Image'){
-         steps{
-             script
-                {
-                   
-                    docker.withRegistry(ECRURL, ECRCRED)
-                    {
-                        docker.image(DOCKER_IMAGE).push()
-                    }
-                }
-            }
-         }
          stage('Deploy to ECS') {
-		   steps {
+		 steps {
          agent {
             ecs {
                cloud 'Jenkins-ECS'
@@ -43,7 +18,7 @@ pipeline {
                memory 1024
                cpu 512
                assignPublicIp false
-               image '531359658382.dkr.ecr.ap-south-1.amazonaws.com/node_app:28'
+               image '531359658382.dkr.ecr.ap-south-1.amazonaws.com/node_app:9'
                label 'ECS-label'
                 }
             }
