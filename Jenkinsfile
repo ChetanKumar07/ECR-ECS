@@ -5,7 +5,7 @@ pipeline {
          stage('Deploy to ECS') {
          agent {
             ecs {
-               cloud 'Jenkins-ECS'
+               cloud 'ECR-ECS'
 	       inheritFrom 'ECS-template'
                launchType 'FARGATE'
                memory 1024
